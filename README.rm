@@ -1,0 +1,30 @@
+# Project Title
+
+This project is set up using npm. Below are the main commands you'll need to work with it.
+
+## Getting Started
+
+For more detailed instructions, check out the tutorial:
+[Getting Started Tutorial](https://www.youtube.com/watch?v=KZ3tIGHU314)
+
+### Installation
+
+1. Initialize the project (if you haven't already):
+    ```
+    npm init
+    ```
+
+2. Install the project dependencies:
+    ```
+    npm install
+    ```
+
+3. Install additional packages:
+    - Install Discord.js:
+      ```
+      npm install discord.js
+      ```
+    - Install nodemon globally:
+      ```
+      sudo npm install -g nodemon
+      ```
