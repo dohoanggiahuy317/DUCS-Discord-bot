@@ -25,7 +25,11 @@ client.on('guildMemberAdd', async member => {
         const askQuestion = async (question) => {
             await dmChannel.send(question);
             const filter = response => response.author.id === member.id;
-            const collected = await dmChannel.awaitMessages({ filter, max: 1, time: 60000, errors: ['time'] });
+            const collected = await dmChannel.awaitMessages({ filter, max: 1, time: 6000000 });
+            if (!collected.size) {
+            await dmChannel.send("Timed out waiting for a response. Please try rejoin the server again.");
+            throw new Error("No response received within time limit.");
+            }
             return collected.first().content;
         };
 
