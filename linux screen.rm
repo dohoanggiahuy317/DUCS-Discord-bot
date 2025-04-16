@@ -1,0 +1,41 @@
+To reconnect to a detached screen session and check its status, you can use a few basic commands:
+
+⸻
+
+1. List Active Screen Sessions
+
+Run the following command to list all screen sessions running on your instance:
+
+screen -ls
+
+This will output something like:
+
+There is a screen on:
+    7161.discordbot   (Detached)
+1 Socket in /run/screen/S-ubuntu.
+
+Here, 7161.discordbot is the session name (or session id combined with name).
+
+⸻
+
+2. Reattach to a Screen Session
+
+If you have a single detached session, you can simply reattach by running:
+
+screen -r
+
+If there are multiple sessions or you want to specify the session, use:
+
+screen -r 7161.discordbot
+
+Replace 7161.discordbot with the correct session ID from the output of screen -ls.
+
+⸻
+
+3. Forcibly Detach and Reattach
+
+In some cases, if the session is still marked as attached or you’re facing issues reattaching, you can forcibly detach it from elsewhere and reattach:
+
+screen -D -r 7161.discordbot
+
+The -D flag detaches the session from wherever it might be attached and the -r flag then reattaches it to your current terminal.

@@ -1,0 +1,54 @@
+Here’s a step-by-step guide to create and edit a .env file for your bot:
+
+⸻
+
+1. Create the .env File
+	1.	Open your terminal and navigate to your repository directory:
+For example:
+
+cd ~/DUCS-Discord-bot
+
+
+	2.	Create the .env file:
+You can create it with the touch command:
+
+touch .env
+
+
+
+⸻
+
+2. Edit the .env File
+
+You can use any text editor you’re comfortable with. Here are two common methods:
+
+Using Nano (Simple Command Line Editor)
+	1.	Open the file with Nano:
+
+nano .env
+
+
+	2.	Add your environment variables. For example:
+
+DISCORD_TOKEN=XYZ
+
+
+	3.	Save the file and exit:
+	•	Press Ctrl+O (this writes the changes to the file).
+	•	Press Enter to confirm the filename.
+	•	Press Ctrl+X to exit Nano.
+
+Using Vim (Alternate Command Line Editor)
+	1.	Open the file with Vim:
+
+vim .env
+
+
+	2.	Enter Insert Mode:
+Press i to start editing.
+	3.	Add your variables:
+
+
+	4.	Save and exit:
+	•	Press Esc to leave insert mode.
+	•	Type :wq and press Enter to write the changes and quit.

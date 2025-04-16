@@ -5,6 +5,46 @@
 # OS generated files
 .DS_Store
 *.DS_Store
+Thumbs.db
 
-# Node dependencies (if applicable)
+# Node dependencies and logs
 node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Python specific
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.egg-info/
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+
+# IDE settings
+.vscode/
+.idea/
+
+# Test, coverage and build reports
+.pytest_cache/
+.coverage
+.coverage.*
+*.cover
+htmlcov/
+build/
+dist/
+
+# Logs and temporary files
+logs/
+*.log
+tmp/
+temp/
+
+
+# Data files
+J_DUCS_internship/Summer2025-Internships/
+J_DUCS_newgrad/New-Grad-Positions/
