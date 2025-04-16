@@ -1,5 +1,8 @@
 To reconnect to a detached screen session and check its status, you can use a few basic commands:
 
+0. Create screen
+screen -S {screen1}
+
 ⸻
 
 1. List Active Screen Sessions
