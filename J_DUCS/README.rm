@@ -16,8 +16,7 @@ For more detailed instructions, check out the tutorial:
 
 2. Install the project dependencies:
     ```
-    npm i discord.js dotenv
-    npm install nodemon
+    npm i discord.js dotenv nodemon
     ```
 
 3. Install additional packages:
@@ -29,3 +28,16 @@ For more detailed instructions, check out the tutorial:
       ```
       sudo npm install -g nodemon
       ```
+
+4. follow the create env.rm to add 
+
+    "scripts": {
+      "start": "nodemon src/index.js"
+    }
+
+
+5. Run
+
+    ```
+    npm start
+    ```

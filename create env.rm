@@ -27,11 +27,9 @@ Using Nano (Simple Command Line Editor)
 
 nano .env
 
-
 	2.	Add your environment variables. For example:
 
 DISCORD_TOKEN=XYZ
-
 
 	3.	Save the file and exit:
 	•	Press Ctrl+O (this writes the changes to the file).
@@ -52,3 +50,10 @@ Press i to start editing.
 	4.	Save and exit:
 	•	Press Esc to leave insert mode.
 	•	Type :wq and press Enter to write the changes and quit.
+
+⸻
+
+change the package.json into 
+"scripts": {
+  "start": "nodemon src/index.js"
+}
