@@ -161,8 +161,8 @@ async def on_ready():
     scheduled_clean_roles_data.start()
 
 
-# @tasks.loop(time=dt_time(hour=20, minute=0, tzinfo=timezone.utc))
-@tasks.loop(time=dt_time(hour=5, minute=14, tzinfo=timezone.utc))
+@tasks.loop(time=dt_time(hour=19, minute=0, tzinfo=timezone.utc))
+# @tasks.loop(time=dt_time(hour=5, minute=14, tzinfo=timezone.utc))
 async def scheduled_role_check():
     print("Scheduled task running...")
     if running:
