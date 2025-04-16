@@ -131,14 +131,15 @@ async def on_message(message):
                 notice = await message.channel.send(
                     f"<@{message.author.id}>, please follow the format: \"!process {{company name}} {{apply|OA|phone|1st round|2nd round|final|offer|rejected|ghost}}\""
                 )
-                await asyncio.sleep(10)
+                await asyncio.sleep(5)
                 await notice.delete()
             except Exception as e:
                 print(e)
+            return
+        return
 
     # ========================================================================
     # THIS FUNCTION HANDLES THE "!update-title" COMMAND TO UPDATE COMPANY NAME
-    # ========================================================================
     if message.content.lower().startswith('!update-title'):
         async def reply_and_delete(content):
             reply = await message.reply(content)
@@ -159,16 +160,19 @@ async def on_message(message):
             # Expected nickname format: "Name - <year>" or "Name - <year> - <company>"
             parts = current_name.split(" - ")
             if len(parts) < 2:
-                return await reply_and_delete("Unable to determine your name from your profile.")
+                await reply_and_delete("Unable to determine your name from your profile.")
+                return
 
             try:
                 year = int(parts[1].strip())
             except ValueError:
-                return await reply_and_delete("Couldn't determine your graduation year.")
+                await reply_and_delete("Couldn't determine your graduation year.")
+                return
 
             current_year = datetime.now().year
             if year > current_year:
-                return await reply_and_delete("This command is only available to graduates or those graduating this year.")
+                await reply_and_delete("This command is only available to graduates or those graduating this year.")
+                return
 
             updated_nickname = f"{parts[0].strip()} - {year}" + (f" - {new_company}" if new_company else "")
             try:
@@ -176,10 +180,12 @@ async def on_message(message):
                 await reply_and_delete(f"Your nickname has been updated to: {updated_nickname}")
             except Exception as e:
                 print(e)
-                return await reply_and_delete("I couldn't update your nickname. Please contact an admin.")
+                await reply_and_delete("I couldn't update your nickname. Please contact an admin.")
+                return
         except Exception as err:
             print("Error updating company name:", err)
             await reply_and_delete("I couldn't update your nickname. Please contact an admin.")
+        return
 
     await bot.process_commands(message)
 
