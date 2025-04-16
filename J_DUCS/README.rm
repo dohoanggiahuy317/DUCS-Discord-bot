@@ -11,12 +11,13 @@ For more detailed instructions, check out the tutorial:
 
 1. Initialize the project (if you haven't already):
     ```
-    npm init
+    npm init -y
     ```
 
 2. Install the project dependencies:
     ```
-    npm install
+    npm i discord.js dotenv
+    npm install nodemon
     ```
 
 3. Install additional packages:
