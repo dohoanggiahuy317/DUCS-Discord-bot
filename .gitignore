@@ -46,5 +46,11 @@ temp/
 
 
 # Data files
-J_DUCS_internship/Summer2025-Internships/
-J_DUCS_newgrad/New-Grad-Positions/
+J_DUCS_farmer/Summer2025-Internships/
+J_DUCS_farmer/New-Grad-Positions/
+J_DUCS_farmer/intern_roles_data.json
+J_DUCS_farmer/newgrad_roles_data.json
+J_DUCS_farmer/roles_data.json
+
+J_DUCS_single_repo/New-Grad-Positions/
+J_DUCS_single_repo/roles_data.json
