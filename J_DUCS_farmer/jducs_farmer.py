@@ -195,7 +195,7 @@ async def on_ready():
 
 
 # ------------- Intern Roles -------------------
-@tasks.loop(time=dt_time(hour=22, minute=10, tzinfo=timezone.utc))
+@tasks.loop(time=dt_time(hour=22, minute=0, tzinfo=timezone.utc))
 async def scheduled_intern_role_check():
     print("Scheduled intern task running...")
     if running:
@@ -238,7 +238,7 @@ async def before_clean_Intern_roles_data():
 
 
 # ------------- Intern Roles -------------------
-@tasks.loop(time=dt_time(hour=22, minute=11, tzinfo=timezone.utc))
+@tasks.loop(time=dt_time(hour=22, minute=15, tzinfo=timezone.utc))
 async def scheduled_newgrad_role_check():
     print("Scheduled newgrad task running...")
     if running:
