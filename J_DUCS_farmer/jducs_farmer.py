@@ -206,9 +206,9 @@ async def scheduled_intern_role_check():
 async def before_scheduled_intern_role_check():
     await bot.wait_until_ready()
 
-@tasks.loop(seconds=604800)
+@tasks.loop(time=dt_time(hour=23, minute=0, tzinfo=timezone.utc))
 async def scheduled_clean_intern_roles_data():
-    print("Cleaning roles data file...")
+    print("Cleaning intern roles data file...")
     if os.path.exists(INTERN_ROLES_DATA_FILE):
         try:
             with open(INTERN_ROLES_DATA_FILE, 'w') as file:
@@ -223,21 +223,9 @@ async def scheduled_clean_intern_roles_data():
 @scheduled_clean_intern_roles_data.before_loop
 async def before_clean_Intern_roles_data():
     await bot.wait_until_ready()
-    # Calculate delay until next Sunday at 20:01 UTC.
-    now = datetime.now(timezone.utc)
-    # Sunday is weekday 6 (Monday=0, Sunday=6)
-    # Set target time for this week (or next if already passed)
-    target = now.replace(hour=20, minute=1, second=0, microsecond=0)
-    days_ahead = (6 - now.weekday()) % 7
-    if days_ahead == 0 and target < now:
-        days_ahead = 7
-    target = target + timedelta(days=days_ahead)
-    delay = (target - now).total_seconds()
-    print(f"Scheduled intern cleaning will start in {delay} seconds.")
-    await asyncio.sleep(delay)
 
 
-# ------------- Intern Roles -------------------
+# ------------- Newgrad Roles -------------------
 @tasks.loop(time=dt_time(hour=22, minute=15, tzinfo=timezone.utc))
 async def scheduled_newgrad_role_check():
     print("Scheduled newgrad task running...")
@@ -249,9 +237,9 @@ async def scheduled_newgrad_role_check():
 async def before_scheduled_newgrad_role_check():
     await bot.wait_until_ready()
 
-@tasks.loop(seconds=604800)
+@tasks.loop(time=dt_time(hour=23, minute=15, tzinfo=timezone.utc))
 async def scheduled_clean_newgrad_roles_data():
-    print("Cleaning roles data file...")
+    print("Cleaning newgrad roles data file...")
     if os.path.exists(NEWGRAD_ROLES_DATA_FILE):
         try:
             with open(NEWGRAD_ROLES_DATA_FILE, 'w') as file:
@@ -266,18 +254,6 @@ async def scheduled_clean_newgrad_roles_data():
 @scheduled_clean_newgrad_roles_data.before_loop
 async def before_clean_newgrad_roles_data():
     await bot.wait_until_ready()
-    # Calculate delay until next Sunday at 20:01 UTC.
-    now = datetime.now(timezone.utc)
-    # Sunday is weekday 6 (Monday=0, Sunday=6)
-    # Set target time for this week (or next if already passed)
-    target = now.replace(hour=19, minute=1, second=0, microsecond=0)
-    days_ahead = (6 - now.weekday()) % 7
-    if days_ahead == 0 and target < now:
-        days_ahead = 7
-    target = target + timedelta(days=days_ahead)
-    delay = (target - now).total_seconds()
-    print(f"Scheduled newgrad cleaning will start in {delay} seconds.")
-    await asyncio.sleep(delay)
 
 
 # ===============================================================
